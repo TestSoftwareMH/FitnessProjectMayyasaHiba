@@ -17,7 +17,6 @@ import static org.junit.Assert.*;
 public class accountManagementTest {
 
     private List<Map<String, String>> accounts;
-    private Map<String, String> dietaryPreferences;
     private boolean result;
 
     @Given("User wants to create new account")
@@ -76,7 +75,7 @@ public class accountManagementTest {
 
     @Given("User logged in as client")
     public void user_logged_in_as_client() {
-        mainProgram.initializePrograms();
+        assertTrue(!mainProgram.login("Client"));
     }
 
 
@@ -87,35 +86,16 @@ public class accountManagementTest {
         List<Map<String, String>> expDetailsList=dataTable.asMaps(String.class,String.class);
         for(Map<String, String> expDetails:expDetailsList) {
             assertNotNull("Account does not exist", loggedAccount);
-            assertEquals("Invalid restrictions", expDetails.get("Restrictions"), loggedAccount.get("Restrictions"));
+            assertEquals("Invalid email", expDetails.get("Email"), loggedAccount.get("Email"));
             assertEquals("Invalid dietary preferences", expDetails.get("Dietary preferences"), loggedAccount.get("Dietary preferences"));
-            result=true;
+            assertEquals("Invalid restrictions", expDetails.get("Restrictions"), loggedAccount.get("Restrictions"));
+            result =true;
         }
     }
 
 
-    @Then("The system should display the following details:")
-    public void the_system_should_display_the_following_details(io.cucumber.datatable.DataTable dataTable) {
-        assertTrue("Fail to view", result);
-    }
-
-
-    @When("The user {string} wants to update dietary preferences or restrictions with the following details:")
-    public void theUserWantsToUpdateDietaryPreferencesOrRestrictionsWithTheFollowingDetails(String email, io.cucumber.datatable.DataTable dataTable) {
-        result=false;
-        Map<String, String> loggedAccount = mainProgram.getAccountDet(email);
-        List<Map<String, String>> updatePreferences=dataTable.asMaps(String.class,String.class);
-        for(Map<String, String> updateDetails:updatePreferences) {
-            assertEquals("Invalid restrictions", updateDetails.get("Restrictions"), loggedAccount.get("Restrictions"));
-            assertEquals("Invalid dietary preferences", updateDetails.get("Dietary preferences"), loggedAccount.get("Dietary preferences"));
-            mainProgram.updateDietaryPreferences(updateDetails.get("Email"), updateDetails);
-            result=true;
-        }
-    }
-
-
-    @Then("The system should save the updates")
-    public void the_system_should_save_the_updates() {
+    @Then("The system should display the details")
+    public void theSystemShouldDisplayTheDetails() {
         assertTrue("Fail to view", result);
     }
 

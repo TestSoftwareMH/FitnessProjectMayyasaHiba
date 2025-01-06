@@ -12,11 +12,6 @@ public class interactWithClientTest {
 
     private String result;
 
-    /*@Before
-    public void setUp() {
-        mainProgram.initializePrograms();
-    }*/
-
     @Given("User has logged in as instructor to interact")
     public void user_has_logged_in_as_instructor_to_interact() {
         assertTrue("The user is not instructor", mainProgram.login("Instructor"));

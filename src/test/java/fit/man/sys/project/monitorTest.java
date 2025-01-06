@@ -15,10 +15,10 @@ import static org.junit.Assert.assertTrue;
 
 public class monitorTest {
 
-   /* @Before
+    @Before
     public void setUp() {
         mainProgram.initializePrograms();
-    }*/
+    }
 
     @Given("User has logged in as instructor to monitor")
     public void user_has_logged_in_as_instructor_to_monitor() {

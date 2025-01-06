@@ -9,17 +9,17 @@ import java.util.stream.Collectors;
 
 public class mainProgram {
 
-    private static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     private final static List<mainProgram> programs=new ArrayList<mainProgram>();
     private final static List<mainProgram> programsForExpo=new ArrayList<mainProgram>();
     private static List<mainProgram> programsByDiff=new ArrayList<mainProgram>();
     private static List<mainProgram> programsByGoal=new ArrayList<mainProgram>();
-    private static List<Integer> enrolledPro=new ArrayList<Integer>();;
+    private static List<mainProgram> enrolledPro=new ArrayList<mainProgram>();;
     private final static List<Client> clients=new ArrayList<Client>();
-    private static List<Client> clientsWithId=new ArrayList<Client>();
-    private static List<Discussion> discussionsWithId=new ArrayList<Discussion>();
+    private static final List<Client> clientsWithId=new ArrayList<Client>();
+    private static final List<Discussion> discussionsWithId=new ArrayList<Discussion>();
     private final static List<Discussion> discussions=new ArrayList<Discussion>();
-    private static Map<String, Map<String, String>> accounts = new HashMap<>();
+    private static final Map<String, Map<String, String>> accounts = new HashMap<>();
     private int ProgramId;
     private String ProgramTitle ;
     private int Duration;
@@ -42,6 +42,9 @@ public class mainProgram {
         this.ScheduleType=ScheduleType;
         this.ScheduleTime=ScheduleTime;
     }
+
+
+
     public Integer getProgramId() {
         return ProgramId;
     }
@@ -121,6 +124,7 @@ public class mainProgram {
         p.setTotalNumberOfClient(10); p.setNumberOfAttendedClients(9);
         Client c;
         programs.add(p);
+        programs.add(new mainProgram(505,"Bodysculpt",60,"Beginner","Shape of the body", "video" ,130,"Online","Sunday-Tuesday , 7:00pm-8:00pm"));
         programs.add(new mainProgram(     205     , "Dance" , 60 , "Advanced" , "Weight loss", "image" , 50 , "In-Person" , "Sunday , 9:00am-10:00am"));
         clients.add(c=new Client(10,"Hiba Zawatieh","90%" ,"80%"  , "Cardio" ,null, true,List.of(100)));
         c.setRestrictions("No tomato"); c.setDietaryPreferences("Vegetarian");
@@ -477,18 +481,6 @@ public class mainProgram {
         return null;
     }
 
-    public static void updateDietaryPreferences(String Email, Map<String, String>dietaryPreferences) {
-        for(Client c:clients) {
-            if(c.getEmail().equals(Email)) {
-                if(dietaryPreferences.containsKey("Dietary preferences")) {
-                    c.setDietaryPreferences(dietaryPreferences.get("Dietary preferences"));
-                }
-                if(dietaryPreferences.containsKey("Restrictions")) {
-                    c.setRestrictions(dietaryPreferences.get("Restrictions"));
-                }
-            }
-        }
-    }
     public static void addPro(){
         programsForExpo.add(new mainProgram(     205     , "Dance" , 60 , "Advanced" , "Weight loss", "image" , 50 , "In-Person" , "Sunday , 9:00am-10:00am"));
         programsForExpo.add(new mainProgram(     100     , "Cardio" , 60 , "Intermediate" , "Weight loss", "video" , 70 , "In-Person" , "Sunday-Tuesday , 7:00pm-8:00pm"));
@@ -503,6 +495,54 @@ public class mainProgram {
         programsByGoal=programsForExpo.stream().filter(p -> p.getGoals().trim().equals(goal)).collect(Collectors.toList());
         return programsByGoal;
     }
+
+
+    public static boolean EnrollmentResult(int clientId,int programId) {
+        String schedule = null;
+        List<Integer> enrollPrograms=new ArrayList<Integer>();
+        for (mainProgram p : programs) {
+            if (p.getProgramId() == programId) {
+                schedule = p.getScheduleTime();
+            }
+        }
+        for(Client c : clients) {
+            if (c.getClientId() == clientId) {
+                enrollPrograms=c.getProgramsClientIn();
+            }
+        }
+        for(mainProgram p : programs) {
+            for(int id : enrollPrograms) {
+                if(p.getProgramId()==id) {
+                    enrolledPro.add(p);
+                }
+            }
+        }
+        for(mainProgram p : enrolledPro){
+            if(p.getScheduleTime().equals(schedule))
+                return false;
+        }
+        return true;
+    }
+
+
+    public static List<mainProgram> getEnrolledPrograms(int clientId) {
+        List<Integer> enrollPrograms=new ArrayList<Integer>();
+        for(Client c : clients) {
+            if(c.getClientId()== clientId) {
+                enrollPrograms=c.getProgramsClientIn();
+            }
+        }
+        for(mainProgram p : programs) {
+            for(int id : enrollPrograms) {
+                if(p.getProgramId()==id) {
+                    enrolledPro.add(p);
+                }
+            }
+        }
+        return enrolledPro;
+    }
+
+
 
 
 }

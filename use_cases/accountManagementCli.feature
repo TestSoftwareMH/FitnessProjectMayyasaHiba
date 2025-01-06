@@ -35,16 +35,5 @@ Feature: Account Management for client
 
   Examples:
   |    Email   |   Dietary preferences   |   Restrictions   |
-  | hbzawati@gmail.com |       Vegetarian        |     No tomato    |
+  |hbzawati@gmail.com|Vegetarian|No tomato|
 
-  @tag4
-  Scenario Outline: Update dietary preferences or restrictions
-    Given User logged in as client
-    When The user "<Email>" wants to update dietary preferences or restrictions with the following details:
-    |    Email   |   Dietary preferences   |   Restrictions   |
-    |   <Email>  |  <Dietary preferences>  |  <Restrictions>  |
-    Then The system should save the updates
-
-  Examples:
-    |    Email   |   Dietary preferences   |   Restrictions   |
-    | hbzawati@gmail.com |       Vegetarian        |   No strawberry  |

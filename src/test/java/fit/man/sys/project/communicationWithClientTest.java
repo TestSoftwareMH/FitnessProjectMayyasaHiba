@@ -14,10 +14,6 @@ public class communicationWithClientTest {
 
     private String result;
 
-    @Before
-    public void setup() {
-        mainProgram.initializePrograms();
-    }
     @Given("User has logged in as instructor to communication")
     public void user_has_logged_in_as_instructor_to_communication() {
         mainProgram.login("Instructor");

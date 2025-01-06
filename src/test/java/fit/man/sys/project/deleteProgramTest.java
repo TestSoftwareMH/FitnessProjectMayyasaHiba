@@ -16,11 +16,6 @@ public class deleteProgramTest {
     private mainProgram program;
     private String result;
 
-    /*@Before
-    public void setUp() {
-        mainProgram.initializePrograms();
-    }*/
-
     @Given("User has logged in as instructor to delete program")
     public void user_has_logged_in_as_instructor_to_delete_program() {
         assertTrue("The user is not instructor", mainProgram.login("Instructor"));
