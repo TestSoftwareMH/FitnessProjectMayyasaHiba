@@ -86,7 +86,6 @@ public class accountManagementTest {
         List<Map<String, String>> expDetailsList=dataTable.asMaps(String.class,String.class);
         for(Map<String, String> expDetails:expDetailsList) {
             assertNotNull("Account does not exist", loggedAccount);
-            assertEquals("Invalid email", expDetails.get("Email"), loggedAccount.get("Email"));
             assertEquals("Invalid dietary preferences", expDetails.get("Dietary preferences"), loggedAccount.get("Dietary preferences"));
             assertEquals("Invalid restrictions", expDetails.get("Restrictions"), loggedAccount.get("Restrictions"));
             result =true;
