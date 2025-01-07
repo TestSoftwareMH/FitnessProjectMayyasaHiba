@@ -18,7 +18,7 @@
             </goals>
         </execution>
         <execution>
-            <id>report</id>
+            <id>generate-report</id>
             <phase>verify</phase>
             <goals>
                 <goal>report</goal>
