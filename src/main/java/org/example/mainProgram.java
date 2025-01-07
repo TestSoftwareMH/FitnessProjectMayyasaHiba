@@ -20,96 +20,96 @@ public class mainProgram {
     private static final List<Discussion> discussionsWithId=new ArrayList<Discussion>();
     private final static List<Discussion> discussions=new ArrayList<Discussion>();
     private static final Map<String, Map<String, String>> accounts = new HashMap<>();
-    private int ProgramId;
-    private String ProgramTitle ;
-    private int Duration;
-    private String DifficultyLevel ;
-    private String Goals ;
-    private String Description ;
-    private double Price;
-    private String ScheduleType;
-    private String ScheduleTime ;
-    private int TotalNumberOfClient;
-    private int NumberOfAttendedClients;
+    private int programId;
+    private String programTitle;
+    private int duration;
+    private String difficultyLevel;
+    private String goals;
+    private String description;
+    private double price;
+    private String scheduleType;
+    private String scheduleTime;
+    private int totalNumberOfClient;
+    private int numberOfAttendedClients;
     public mainProgram(int ProgramId,String ProgramTitle,int Duration,String DifficultyLevel,String Goals,String Description,double Price,String ScheduleType,String ScheduleTime) {
-        this.ProgramId=ProgramId;
-        this.ProgramTitle=ProgramTitle;
-        this.Duration=Duration;
-        this.DifficultyLevel=DifficultyLevel;
-        this.Goals=Goals;
-        this.Description=Description;
-        this.Price=Price;
-        this.ScheduleType=ScheduleType;
-        this.ScheduleTime=ScheduleTime;
+        this.programId =ProgramId;
+        this.programTitle =ProgramTitle;
+        this.duration =Duration;
+        this.difficultyLevel =DifficultyLevel;
+        this.goals =Goals;
+        this.description =Description;
+        this.price =Price;
+        this.scheduleType =ScheduleType;
+        this.scheduleTime =ScheduleTime;
     }
 
 
 
     public Integer getProgramId() {
-        return ProgramId;
+        return programId;
     }
     public void setProgramId(int ProgramId) {
-        this.ProgramId=ProgramId;
+        this.programId =ProgramId;
     }
     public String getProgramTitle() {
-        return ProgramTitle;
+        return programTitle;
     }
     public void setProgramTitle(String ProgramTitle) {
-        this.ProgramTitle=ProgramTitle;
+        this.programTitle =ProgramTitle;
     }
     public Integer getDuration() {
-        return Duration;
+        return duration;
     }
     public void setDuration(int Duration) {
-        this.Duration=Duration;
+        this.duration =Duration;
     }
     public String getDifficultyLevel() {
-        return DifficultyLevel;
+        return difficultyLevel;
     }
     public void setDifficultyLevel(String DifficultyLevel) {
-        this.DifficultyLevel=DifficultyLevel;
+        this.difficultyLevel =DifficultyLevel;
     }
     public String getGoals() {
-        return Goals;
+        return goals;
     }
     public void setGoals(String Goals) {
-        this.Goals=Goals;
+        this.goals =Goals;
     }
     public String getDescription() {
-        return Description;
+        return description;
     }
     public void setDescription(String Description) {
-        this.Description=Description;
+        this.description =Description;
     }
     public Double getPrice() {
-        return Price;
+        return price;
     }
     public void setPrice(double Price) {
-        this.Price=Price;
+        this.price =Price;
     }
     public String getScheduleType() {
-        return ScheduleType;
+        return scheduleType;
     }
     public void setScheduleType(String ScheduleType) {
-        this.ScheduleType=ScheduleType;
+        this.scheduleType =ScheduleType;
     }
     public String getScheduleTime() {
-        return ScheduleTime;
+        return scheduleTime;
     }
     public void setScheduleTime(String ScheduleTime) {
-        this.ScheduleTime=ScheduleTime;
+        this.scheduleTime =ScheduleTime;
     }
     public Integer getTotalNumberOfClient() {
-        return TotalNumberOfClient;
+        return totalNumberOfClient;
     }
     public void setTotalNumberOfClient(int TotalNumberOfClient) {
-        this.TotalNumberOfClient=TotalNumberOfClient;
+        this.totalNumberOfClient =TotalNumberOfClient;
     }
     public Integer getNumberOfAttendedClients() {
-        return NumberOfAttendedClients;
+        return numberOfAttendedClients;
     }
     public void setNumberOfAttendedClients(int NumberOfAttendedClients) {
-        this.NumberOfAttendedClients=NumberOfAttendedClients;
+        this.numberOfAttendedClients =NumberOfAttendedClients;
     }
     public static boolean login(String role) {
         if(role.equals("Instructor")){
@@ -126,15 +126,15 @@ public class mainProgram {
         programs.add(p);
         programs.add(new mainProgram(505,"Bodysculpt",60,"Beginner","Shape of the body", "video" ,130,"Online","Sunday-Tuesday , 7:00pm-8:00pm"));
         programs.add(new mainProgram(     205     , "Dance" , 60 , "Advanced" , "Weight loss", "image" , 50 , "In-Person" , "Sunday , 9:00am-10:00am"));
-        clients.add(c=new Client(10,"Hiba Zawatieh","90%" ,"80%"  , "Cardio" ,null, true,List.of(100)));
+        clients.add(c=new Client(10,"Hiba Zawatieh","90%" ,"80%"  , "Cardio" , true,List.of(100)));
         c.setRestrictions("No tomato"); c.setDietaryPreferences("Vegetarian");
         c.setPassword("12345");  c.setAge(20);c.setEmail("hbzawati@gmail.com");c.setPhoneNumber("0599956733");c.setFitnessGoals("Training in progress");c.setWeight(50);
         try{
             Date birthday=dateFormat.parse("2004-12-12");
             c.setBirthday(birthday);}catch(ParseException e){return;}
-        clients.add(new Client(20,"Mayyasa Shaka","55%" ,"30%", "Cardio"  ,null, false,List.of(100)));
-        clients.add(new Client(50,"Nahla Hasan","30%","12%", "Cardio"  ,null, false,List.of(100)));
-        clients.add(new Client(55,"Fatima Mohammad","30%","12%", "Dance"  ,null, false,List.of(205)));
+        clients.add(new Client(20,"Mayyasa Shaka","55%" ,"30%", "Cardio"  , false,List.of(100)));
+        clients.add(new Client(50,"Nahla Hasan","30%","12%", "Cardio"  , false,List.of(100)));
+        clients.add(new Client(55,"Fatima Mohammad","30%","12%", "Dance"  , false,List.of(205)));
         discussions.add(new Discussion(96,"Fitness project",null));
     }
     public static String createResult(mainProgram program) {
@@ -355,9 +355,9 @@ public class mainProgram {
         }
         if(match) {
             for(int progId:progIdList) {
-            if(progId==ProgramId) {
-                return"Success";
-            }
+                if(progId==ProgramId) {
+                    return"Success";
+                }
             }
         }
         return "Fail";
@@ -382,11 +382,11 @@ public class mainProgram {
             }
         }
         if(match) {
-           for(int Id:IdList) {
-               if(Id==programId) {
-                   return "Success";
-               }
-           }
+            for(int Id:IdList) {
+                if(Id==programId) {
+                    return "Success";
+                }
+            }
         }
         return "Fail";
     }
@@ -443,7 +443,7 @@ public class mainProgram {
     }
     public static void announceOffer(Offer offer) {
         if(announceResult(offer.getFirstDate(),offer.getLastDate()).equals("Success"))
-          System.out.println("New Offer is available:\n"+ "Offer title:\t"+offer.getOfferTitle()+"\nDescription:\t"+ offer.getOfferDescription()+"\nPeriod of offer:\tFrom  "+offer.getFirstDate()+"To  "+offer.getLastDate()+"\nprice:\t"+offer.getPrice());
+            System.out.println("New Offer is available:\n"+ "Offer title:\t"+offer.getOfferTitle()+"\nDescription:\t"+ offer.getOfferDescription()+"\nPeriod of offer:\tFrom  "+offer.getFirstDate()+"To  "+offer.getLastDate()+"\nprice:\t"+offer.getPrice());
     }
 
     public static Client getClientDetails(int ClientId) {
