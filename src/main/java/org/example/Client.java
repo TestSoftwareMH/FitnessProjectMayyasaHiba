@@ -1,9 +1,3 @@
-package org.example;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 public class Client {
 
 
@@ -13,34 +7,34 @@ public class Client {
     private Date birthday;
     private String email;
     private String phoneNumber;
-    private String Attendance;
-    private String CompletionRate;
-    private String MessageDelivered;
-    private String Feedback;
-    private String Activity;
-    private String FitnessGoals;
-    private double Weight;
-    private String Password;
-    private boolean ClientInProgress;
+    private String attendance;
+    private String completionRate;
+    private String messageDelivered;
+    private String feedback;
+    private String activity;
+    private String fitnessGoals;
+    private double weight;
+    private String password;
+    private boolean clientInProgress;
     private List<Integer> programsClientIn=new ArrayList<Integer>();
     private String dietaryPreferences;
     private String restrictions;
-    public Client(int clientId,String clientName,String Attendance,String CompletionRate,String Activity,
-                  String MessageDelivered,boolean ClientInProgress,List<Integer> programsClientIn) {
+    public Client(int clientId,String clientName,String attendance,String completionRate,String activity,
+                  String messageDelivered,boolean clientInProgress,List<Integer> programsClientIn) {
         this.clientId=clientId;
         this.clientName=clientName;
-        this.Attendance=Attendance;
-        this.CompletionRate=CompletionRate;
-        this.Activity=Activity;
-        this.MessageDelivered=MessageDelivered;
-        this.ClientInProgress=ClientInProgress;
+        this.attendance =attendance;
+        this.completionRate =completionRate;
+        this.activity =activity;
+        this.messageDelivered =messageDelivered;
+        this.clientInProgress =clientInProgress;
         this.programsClientIn=programsClientIn;
     }
     public Integer getClientId() {
         return clientId;
     }
-    public void setProgramId(int ClientId) {
-        this.clientId=ClientId;
+    public void setProgramId(int clientId) {
+        this.clientId=clientId;
     }
     public String getClientName() {
         return clientName;
@@ -73,22 +67,22 @@ public class Client {
         this.phoneNumber=phoneNumber;
     }
     public String getAttendance() {
-        return Attendance;
+        return attendance;
     }
-    public void setAttendance(String Attendance) {
-        this.Attendance=Attendance;
+    public void setAttendance(String attendance) {
+        this.attendance =attendance;
     }
     public String getCompletionRate() {
-        return CompletionRate;
+        return completionRate;
     }
-    public void setCompletionRate(String CompletionRate) {
-        this.CompletionRate=CompletionRate;
+    public void setCompletionRate(String completionRate) {
+        this.completionRate =completionRate;
     }
     public String getMessageDelivered() {
-        return MessageDelivered;
+        return messageDelivered;
     }
-    public void setMessageDelivered(String MessageDelivered) {
-        this.MessageDelivered=MessageDelivered;
+    public void setMessageDelivered(String messageDelivered) {
+        this.messageDelivered =messageDelivered;
     }
     public String getDietaryPreferences() {
         return dietaryPreferences;
@@ -103,40 +97,40 @@ public class Client {
         this.restrictions=restrictions;
     }
     public String getFeedback() {
-        return Feedback;
+        return feedback;
     }
-    public void setFeedback(String Feedback) {
-        this.Feedback=Feedback;
+    public void setFeedback(String feedback) {
+        this.feedback =feedback;
     }
     public String getActivity() {
-        return Activity;
+        return activity;
     }
-    public void setActivity(String Activity) {
-        this.Activity=Activity;
+    public void setActivity(String activity) {
+        this.activity =activity;
     }
     public String getFitnessGoals() {
-        return FitnessGoals;
+        return fitnessGoals;
     }
-    public void setFitnessGoals(String FitnessGoals) {
-        this.FitnessGoals=FitnessGoals;
+    public void setFitnessGoals(String fitnessGoals) {
+        this.fitnessGoals =fitnessGoals;
     }
     public double getWeight() {
-        return Weight;
+        return weight;
     }
-    public void setWeight(double Weight) {
-        this.Weight=Weight;
+    public void setWeight(double weight) {
+        this.weight =weight;
     }
     public String getPassword() {
-        return Password;
+        return password;
     }
-    public void setPassword(String Password) {
-        this.Password=Password;
+    public void setPassword(String password) {
+        this.password =password;
     }
     public boolean getClientInProgress() {
-        return ClientInProgress;
+        return clientInProgress;
     }
-    public void setClientInProgress(boolean ClientInProgress) {
-        this.ClientInProgress=ClientInProgress;
+    public void setClientInProgress(boolean clientInProgress) {
+        this.clientInProgress =clientInProgress;
     }
     public List<Integer> getProgramsClientIn() {
         return programsClientIn;
