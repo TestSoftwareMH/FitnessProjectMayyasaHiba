@@ -1,3 +1,9 @@
+package org.example;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 public class Client {
 
 
@@ -20,13 +26,12 @@ public class Client {
     private String dietaryPreferences;
     private String restrictions;
     public Client(int clientId,String clientName,String attendance,String completionRate,String activity,
-                  String messageDelivered,boolean clientInProgress,List<Integer> programsClientIn) {
+                  boolean clientInProgress,List<Integer> programsClientIn) {
         this.clientId=clientId;
         this.clientName=clientName;
         this.attendance =attendance;
         this.completionRate =completionRate;
         this.activity =activity;
-        this.messageDelivered =messageDelivered;
         this.clientInProgress =clientInProgress;
         this.programsClientIn=programsClientIn;
     }
@@ -137,7 +142,7 @@ public class Client {
     }
     public void setProgramsClientIn(List<Integer> programsClientIn) {
         this.programsClientIn=programsClientIn;
-    }
+}
 
 
 }
