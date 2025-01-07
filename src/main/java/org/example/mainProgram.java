@@ -526,15 +526,15 @@ public class mainProgram {
 
 
     public static List<mainProgram> getEnrolledPrograms(int clientId) {
-        List<Integer> enrollPrograms=new ArrayList<Integer>();
-        for(Client c : clients) {
-            if(c.getClientId()== clientId) {
-                enrollPrograms=c.getProgramsClientIn();
+        List<Integer> enrollPrograms = new ArrayList<Integer>();
+        for (Client c : clients) {
+            if (c.getClientId() == clientId) {
+                enrollPrograms = c.getProgramsClientIn();
             }
         }
-        for(mainProgram p : programs) {
-            for(int id : enrollPrograms) {
-                if(p.getProgramId()==id) {
+        for (mainProgram p : programs) {
+            for (int id : enrollPrograms) {
+                if (p.getProgramId() == id) {
                     enrolledPro.add(p);
                 }
             }
