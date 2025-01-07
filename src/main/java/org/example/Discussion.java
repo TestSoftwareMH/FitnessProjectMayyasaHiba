@@ -3,31 +3,31 @@ package org.example;
 public class Discussion {
 
 
-    private int DiscussionId;
-    private String DiscussionName;
-    private String Message;
+    private int discussionId;
+    private String discussionName;
+    private String message;
 
-    public Discussion(int DiscussionId, String DiscussionName, String Message ) {
-        this.DiscussionId = DiscussionId;
-        this.DiscussionName = DiscussionName;
-        this.Message = Message;
+    public Discussion(int discussionId, String discussionName, String message ) {
+        this.discussionId = discussionId;
+        this.discussionName = discussionName;
+        this.message = message;
     }
     public Integer getDiscussionId() {
-        return DiscussionId;
+        return discussionId;
     }
-    public void setDiscussionId(int DiscussionId) {
-        this.DiscussionId=DiscussionId;
+    public void setDiscussionId(int discussionId) {
+        this.discussionId =discussionId;
     }
     public String getDiscussionName() {
-        return DiscussionName;
+        return discussionName;
     }
-    public void setDiscussionName(String DiscussionName) {
-        this.DiscussionName=DiscussionName;
+    public void setDiscussionName(String discussionName) {
+        this.discussionName =discussionName;
     }
     public String getMessage() {
-        return Message;
+        return message;
     }
-    public void setMessage(String Message) {
-        this.Message=Message;
+    public void setMessage(String message) {
+        this.message =message;
     }
 }
