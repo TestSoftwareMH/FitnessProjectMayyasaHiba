@@ -7,45 +7,45 @@ import java.util.List;
 public class Client {
 
 
-    private int clientId;
-    private String clientName;
+    private int cliId;
+    private String cliName;
     private int age;
     private Date birthday;
     private String email;
     private String phoneNumber;
-    private String attendance;
-    private String completionRate;
+    private String attendances;
+    private String completeRate;
     private String messageDelivered;
     private String feedback;
     private String activity;
     private String fitnessGoals;
     private double weight;
     private String password;
-    private boolean clientInProgress;
-    private List<Integer> programsClientIn=new ArrayList<Integer>();
+    private boolean cliInProgress;
+    private List<Integer> programsCliIn =new ArrayList<Integer>();
     private String dietaryPreferences;
     private String restrictions;
     public Client(int clientId,String clientName,String attendance,String completionRate,String activity,
                   boolean clientInProgress,List<Integer> programsClientIn) {
-        this.clientId=clientId;
-        this.clientName=clientName;
-        this.attendance =attendance;
-        this.completionRate =completionRate;
+        this.cliId =clientId;
+        this.cliName =clientName;
+        this.attendances =attendance;
+        this.completeRate =completionRate;
         this.activity =activity;
-        this.clientInProgress =clientInProgress;
-        this.programsClientIn=programsClientIn;
+        this.cliInProgress =clientInProgress;
+        this.programsCliIn =programsClientIn;
     }
     public Integer getClientId() {
-        return clientId;
+        return cliId;
     }
     public void setProgramId(int clientId) {
-        this.clientId=clientId;
+        this.cliId =clientId;
     }
     public String getClientName() {
-        return clientName;
+        return cliName;
     }
     public void setClientName(String clientName) {
-        this.clientName=clientName;
+        this.cliName =clientName;
     }
     public int getAge() {
         return age;
@@ -72,16 +72,16 @@ public class Client {
         this.phoneNumber=phoneNumber;
     }
     public String getAttendance() {
-        return attendance;
+        return attendances;
     }
     public void setAttendance(String attendance) {
-        this.attendance =attendance;
+        this.attendances =attendance;
     }
     public String getCompletionRate() {
-        return completionRate;
+        return completeRate;
     }
     public void setCompletionRate(String completionRate) {
-        this.completionRate =completionRate;
+        this.completeRate =completionRate;
     }
     public String getMessageDelivered() {
         return messageDelivered;
@@ -132,17 +132,17 @@ public class Client {
         this.password =password;
     }
     public boolean getClientInProgress() {
-        return clientInProgress;
+        return cliInProgress;
     }
     public void setClientInProgress(boolean clientInProgress) {
-        this.clientInProgress =clientInProgress;
+        this.cliInProgress =clientInProgress;
     }
     public List<Integer> getProgramsClientIn() {
-        return programsClientIn;
+        return programsCliIn;
     }
     public void setProgramsClientIn(List<Integer> programsClientIn) {
-        this.programsClientIn=programsClientIn;
-}
+        this.programsCliIn =programsClientIn;
+    }
 
 
 }

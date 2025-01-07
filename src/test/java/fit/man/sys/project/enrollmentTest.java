@@ -41,7 +41,9 @@ public class enrollmentTest {
 
     @Then("The system should display all programs that the user enrolled in")
     public void theSystemShouldDisplayAllProgramsThatTheUserEnrolledIn() {
-
+        if (enrolledPrograms == null || enrolledPrograms.isEmpty()) {
+            System.out.println("No programs enrolled yet for the user.");
+        }
     }
 
 
@@ -54,6 +56,6 @@ public class enrollmentTest {
     @Then("The system should display error message")
     public void the_system_should_display_error_message() {
         assertFalse("Enrollment failed due to scheduling conflict", result);
-    }
+    }
 
 }

@@ -6,8 +6,6 @@ public class Instructor {
     private String email;
     private String phone;
     private String status;
-    private String instructorId;
-
     // Constructor
     public Instructor(String id, String name, String email, String phone, String status) {
         this.id = id;
@@ -46,14 +44,5 @@ public class Instructor {
     }
     public void setStatus(String status) {
         this.status = status;
-
     }
-    public Instructor(String instructorId) {
-        this.instructorId = instructorId;
-    }
-    // Getter for instructorId
-    public String getInstructorId() {
-        return instructorId;
-    }
-
 }
