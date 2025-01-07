@@ -7,7 +7,7 @@ import java.util.Map;
 public class AccountService {
 
     // Static account store shared across all instances
-    private static Map<String, Map<String, String>> accountStore = new HashMap<>();
+    private  Map<String, Map<String, String>> accountStore = new HashMap<>();
 
     // Method to set the account store externally if needed
     public static void setAccountStore(Map<String, Map<String, String>> newAccountStore) {
@@ -45,3 +45,4 @@ public class AccountService {
         }
         return null; // Return null if not found or not an instructor
     }
+}
